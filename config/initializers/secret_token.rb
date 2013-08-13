@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Got::Application.config.secret_key_base = 'fd238988ecb4b4a765c22b88d7df030cfd7af2dc4fd6bb5ba203d1e240bac931fac39750029184198494c702a14ba1ae0de2bc619f58b26e859bebaa07f267de'
+Got::Application.config.secret_key_base = ENV['SECRET_KEY_BASE']
