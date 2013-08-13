@@ -24,9 +24,6 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
 group :development do
   gem 'commands'
   gem 'mina'
@@ -35,4 +32,8 @@ end
 group :test do
   gem 'minitest', '~> 4.7.0', require: false
   gem 'mocha', require: false
+end
+
+group :production do
+  gem 'unicorn'
 end
