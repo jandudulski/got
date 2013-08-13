@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title GoT Stats
+
+    = stylesheet_link_tag "application", media: "all"
+    = csrf_meta_tags
+  body
+    header
+      h1 Winter is Comming
+
+    section.flash
+      .flash__notice= notice
+      .flash__alert= alert
+
+    .site
+      = yield
+
+  = javascript_include_tag "application"

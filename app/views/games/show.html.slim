@@ -1,0 +1,19 @@
+h1 ##{game.number} - #{game.date}
+h3= game.game_version.name_with_capacity
+
+- if game.comment
+  p= game.comment
+
+table
+  tr
+    th #
+    th House
+    th Player
+  - game.results.each do |result|
+    tr
+      td= result.position
+      td= result.house.name
+      td= result.player.name
+
+
+= link_to 'Dodaj wynik', new_game_result_path(game)

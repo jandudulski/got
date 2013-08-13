@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  number: 1
+  game_version_id: one
+  comment: MyText
+
+two:
+  number: 2
+  game_version_id: two
+  comment: MyText

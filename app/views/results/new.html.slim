@@ -1,0 +1,7 @@
+h1 Podaj wyniki
+
+= simple_form_for [:game, result] do |f|
+  = f.association :house
+  = f.association :player
+  = f.input :position, collection: 1..9
+  = f.button :submit

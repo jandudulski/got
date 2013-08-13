@@ -1,0 +1,7 @@
+table
+  - games.each do |game|
+    tr
+      td= link_to game.date, game
+      td= game.game_version.name_with_capacity
+
+= link_to 'Dodaj', new_game_path

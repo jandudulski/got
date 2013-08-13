@@ -1,0 +1,7 @@
+h1 Podaj wyniki
+
+= simple_form_for game, url: games_path do |f|
+  = f.input :date, as: :date, end_year: Date.today.year
+  = f.input :game_version_id, collection: GameVersion.all, label_method: :name_with_capacity
+  = f.input :comment
+  = f.button :submit
