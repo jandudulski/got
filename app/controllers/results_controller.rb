@@ -20,6 +20,6 @@ class ResultsController < ApplicationController
   private
 
   def result_params
-    params.require(:result).permit(:house_id, :player_id, :position)
+    params.require(:result).permit(:house_id, :player_id, :position, :comment)
   end
 end
