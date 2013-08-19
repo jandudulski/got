@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130814072030) do
+ActiveRecord::Schema.define(version: 20130819225732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,7 +61,6 @@ ActiveRecord::Schema.define(version: 20130814072030) do
   add_index "results", ["game_id", "house_id"], name: "index_results_on_game_id_and_house_id", unique: true, using: :btree
   add_index "results", ["game_id", "player_id"], name: "index_results_on_game_id_and_player_id", unique: true, using: :btree
   add_index "results", ["game_id"], name: "index_results_on_game_id", using: :btree
-  add_index "results", ["house_id", "player_id"], name: "index_results_on_house_id_and_player_id", unique: true, using: :btree
   add_index "results", ["house_id"], name: "index_results_on_house_id", using: :btree
   add_index "results", ["player_id"], name: "index_results_on_player_id", using: :btree
 
