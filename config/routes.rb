@@ -1,5 +1,5 @@
 Got::Application.routes.draw do
-  resources :games, except: [:index] do
+  resources :games, except: [:index, :destroy] do
     resources :results, except: [:index]
   end
 
