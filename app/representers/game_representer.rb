@@ -16,11 +16,11 @@ module GameRepresenter
   end
 
   def players_count
-    self.results.count
+    self.results.size
   end
 
   def winner
-    self.results.where(position: 1).first
+    self.results.find { |r| r.position == 1 }
   end
 
   link :self do

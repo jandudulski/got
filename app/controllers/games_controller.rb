@@ -1,7 +1,7 @@
 class GamesController < ApplicationController
   respond_to :html, :json
 
-  expose(:games) { Game.includes(results: [:house, :player]).order(number: :desc) }
+  expose(:games) { Game.includes(results: [:house, :player]).includes(:game_version).order(number: :desc) }
   expose(:game, attributes: :game_params)
 
   def index
