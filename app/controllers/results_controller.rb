@@ -17,6 +17,12 @@ class ResultsController < ApplicationController
     respond_with result, location: game
   end
 
+  def update
+    result.save
+
+    respond_with result, location: game
+  end
+
   private
 
   def result_params

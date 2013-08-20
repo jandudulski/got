@@ -10,13 +10,14 @@ table
     th House
     th Player
     th Comment
+    th Akcja
   - game.results.each do |result|
     tr
       td= result.position
       td= result.house.name
       td= result.player.name
       td= result.comment
-
+      td= link_to 'Edytuj', [:edit, game, result]
 
 = link_to 'Dodaj wynik', new_game_result_path(game)
 = link_to 'Wszystkie gry', root_path
