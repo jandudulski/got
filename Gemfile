@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'http://rails-assets.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
@@ -6,6 +7,7 @@ gem 'rails', '4.0.0'
 gem 'pg'
 
 # Assets
+gem 'rails-assets-angular'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'sass-rails', '~> 4.0.0'
