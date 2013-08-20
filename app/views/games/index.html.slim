@@ -3,7 +3,7 @@ section ng-controller="GamesCtrl"
     thead
       tr
         th
-          | Id
+          | #
         th
           | Data
         th
@@ -16,7 +16,7 @@ section ng-controller="GamesCtrl"
           | Akcja
     tbody
       tr ng-repeat="game in games"
-        td ng-bind="game.id"
+        td ng-bind="game.number"
         td ng-bind="game.date"
         td ng-bind="game.version"
         td ng-bind="game.players_count"

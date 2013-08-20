@@ -5,6 +5,7 @@ module GameRepresenter
   include Roar::Representer::JSON::HAL::Links
 
   property :id
+  property :number
   property :date
   property :version
   property :players_count
