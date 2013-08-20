@@ -10,6 +10,7 @@ module GameRepresenter
   property :version
   property :players_count
   property :winner, extend: ResultRepresenter, class: Result
+  property :comment
 
   def version
     self.game_version.name_with_capacity
@@ -25,5 +26,9 @@ module GameRepresenter
 
   link :self do
     game_path(self)
+  end
+
+  link :edit do
+    edit_game_path(self)
   end
 end

@@ -21,6 +21,16 @@ class GamesController < ApplicationController
     respond_with game
   end
 
+  def update
+    if game.save
+      flash[:notice] = "Zapisane"
+    else
+      flash[:alert] = "Dupa"
+    end
+
+    respond_with game
+  end
+
   private
 
   def game_params

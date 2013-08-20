@@ -13,6 +13,8 @@ section ng-controller="GamesCtrl"
         th
           | Zwycięzca
         th
+          | Koment
+        th
           | Akcja
     tbody
       tr ng-repeat="game in games"
@@ -24,7 +26,9 @@ section ng-controller="GamesCtrl"
           span ng-bind="game.winner.house.name"
           span
             | ({{ game.winner.player.name }})
+        td ng-bind="game.comment"
         td
           a href="{{ game.links.self.href }}" Zobacz
+          a href="{{ game.links.edit.href }}" Edytuj
 
   = link_to 'Dodaj', new_game_path
