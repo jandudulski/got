@@ -11,7 +11,7 @@ table
     th Player
     th Comment
     th Akcja
-  - game.results.each do |result|
+  - game.results.order(position: :asc).each do |result|
     tr
       td= result.position
       td= result.house.name
