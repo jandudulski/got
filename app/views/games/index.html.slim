@@ -1,7 +1,30 @@
-table
-  - games.each do |game|
-    tr
-      td= link_to game.date, game
-      td= game.game_version.name_with_capacity
+section ng-controller="GamesCtrl"
+  table
+    thead
+      tr
+        th
+          | Id
+        th
+          | Data
+        th
+          | Wersja
+        th
+          | Graczy
+        th
+          | Zwycięzca
+        th
+          | Akcja
+    tbody
+      tr ng-repeat="game in games"
+        td ng-bind="game.id"
+        td ng-bind="game.date"
+        td ng-bind="game.version"
+        td ng-bind="game.players_count"
+        td
+          span ng-bind="game.winner.house.name"
+          span
+            | ({{ game.winner.player.name }})
+        td
+          a href="{{ game.links.self.href }}" Zobacz
 
-= link_to 'Dodaj', new_game_path
+  = link_to 'Dodaj', new_game_path

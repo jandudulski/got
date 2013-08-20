@@ -16,6 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 # Utils
 gem 'decent_exposure'
 gem 'figaro'
+gem 'roar-rails'
 
 # Frontend
 gem 'simple_form', '~> 3.0.0.rc'
