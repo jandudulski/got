@@ -1,5 +1,5 @@
 section ng-controller="GamesCtrl"
-  table
+  table.Games
     thead
       tr
         th
@@ -22,10 +22,7 @@ section ng-controller="GamesCtrl"
         td ng-bind="game.date"
         td ng-bind="game.version"
         td ng-bind="game.players_count"
-        td
-          span ng-bind="game.winner.house.name"
-          span
-            | ({{ game.winner.player.name }})
+        td class="Game-cell__icon--{{ game.winner.house.icon }}" ng-bind="game.winner.player.name"
         td ng-bind="game.comment"
         td
           a href="{{ game.links.self.href }}" Zobacz

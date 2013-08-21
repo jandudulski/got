@@ -1,0 +1,57 @@
+.Games {
+  line-height: 30px;
+
+  a {
+    margin: 0 .25em;
+  }
+}
+
+@mixin game-icon($house) {
+  background-image: image_url('houses/#{$house}-icon.jpg');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  padding-left: 30px;
+}
+
+.Game-cell__icon--aegon {
+  @include game-icon('aegon');
+}
+.Game-cell__icon--arryn {
+  @include game-icon('arryn');
+}
+.Game-cell__icon--baratheon {
+  @include game-icon('baratheon');
+}
+.Game-cell__icon--bolton {
+  @include game-icon('bolton');
+}
+.Game-cell__icon--daenerys {
+  @include game-icon('daenerys');
+}
+.Game-cell__icon--frey {
+  @include game-icon('frey');
+}
+.Game-cell__icon--frey {
+  @include game-icon('frey');
+}
+.Game-cell__icon--greyjoy {
+  @include game-icon('greyjoy');
+}
+.Game-cell__icon--lannister {
+  @include game-icon('lannister');
+}
+.Game-cell__icon--martel {
+  @include game-icon('martel');
+}
+.Game-cell__icon--stark {
+  @include game-icon('stark');
+}
+.Game-cell__icon--stark {
+  @include game-icon('stark');
+}
+.Game-cell__icon--tully {
+  @include game-icon('tully');
+}
+.Game-cell__icon--tyrell {
+  @include game-icon('tyrell');
+}
