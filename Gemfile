@@ -16,6 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 # Utils
 gem 'decent_exposure'
 gem 'figaro'
+gem 'rails-i18n'
 gem 'roar-rails'
 
 # Frontend
