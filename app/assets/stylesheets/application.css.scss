@@ -1,7 +1,7 @@
-/*
- *= require_self
- *= require_tree .
- */
+@import 'bourbon';
+
+@import 'modules/layout';
+@import 'modules/navigation';
 
 table {
   a {

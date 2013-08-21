@@ -1,0 +1,7 @@
+@import 'neat';
+
+$visual-grid: true;
+
+.Grid {
+  @include outer-container;
+}

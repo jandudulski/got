@@ -7,14 +7,18 @@ html ng-app="got" lang="pl"
     = stylesheet_link_tag "application", media: "all"
     = csrf_meta_tags
   body
-    header
-      h1 Winter is Comming
+    .Grid
+      header.Header
+        h1 Winter is Comming
+        nav.Nav
+          = link_to t('nav.home'), root_path, class: 'Nav__item'
+          = link_to t('nav.add_game'), new_game_path, class: 'Nav__item'
 
-    section.flash
-      .flash__notice= notice
-      .flash__alert= alert
+      section.flash
+        .flash__notice= notice
+        .flash__alert= alert
 
-    .site
-      = yield
+      .site
+        = yield
 
   = javascript_include_tag "application"

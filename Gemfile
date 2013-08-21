@@ -7,9 +7,11 @@ gem 'rails', '4.0.0'
 gem 'pg'
 
 # Assets
-gem 'rails-assets-angular'
+gem 'bourbon'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
+gem 'rails-assets-angular'
+gem 'neat'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 
