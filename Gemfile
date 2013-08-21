@@ -32,7 +32,7 @@ end
 
 group :development do
   gem 'commands'
-  gem 'mina'
+  gem 'mina', require: false
 end
 
 group :test do
