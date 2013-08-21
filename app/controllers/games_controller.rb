@@ -20,7 +20,7 @@ class GamesController < ApplicationController
 
   def create
     if game.save
-      flash[:notice] = "Dodano"
+      flash[:success] = "Dodano"
     else
       flash[:alert] = "Dupa"
     end
@@ -30,7 +30,7 @@ class GamesController < ApplicationController
 
   def update
     if game.save
-      flash[:notice] = "Zapisane"
+      flash[:success] = "Zapisane"
     else
       flash[:alert] = "Dupa"
     end

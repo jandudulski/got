@@ -14,9 +14,11 @@ html ng-app="got" lang="pl"
           = link_to t('nav.home'), root_path, class: 'Nav__item'
           = link_to t('nav.add_game'), new_game_path, class: 'Nav__item'
 
-      section.flash
-        .flash__notice= notice
-        .flash__alert= alert
+      - unless flash.empty?
+        section.Flash
+          - [:notice, :success, :alert].each do |key|
+            - if flash.key?(key)
+              div class="Flash__message--#{key}"= flash[key]
 
       .site
         = yield

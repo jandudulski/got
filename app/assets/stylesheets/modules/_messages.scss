@@ -1,0 +1,21 @@
+@mixin Flash__message($color) {
+  background-color: lighten($color, 40%);
+  border-color: lighten($color, 20%);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  color: $color;
+  padding: 1em;
+}
+
+.Flash__message--notice {
+  @include Flash__message(#3a87ad);
+}
+
+.Flash__message--alert {
+  @include Flash__message(#b94a48);
+}
+
+.Flash__message--success {
+  @include Flash__message(#468847);
+}
