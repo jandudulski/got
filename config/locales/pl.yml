@@ -2,3 +2,8 @@ pl:
   nav:
     home: 'Wyniki'
     add_game: 'Dodaj'
+    players: 'Gracze'
+  players:
+    name: 'Gracz'
+    games: 'Gier'
+    avg_position: 'Śr. miejsce'

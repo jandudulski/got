@@ -1,0 +1,12 @@
+section ng-controller="PlayersCtrl"
+  table
+    thead
+      tr
+        th= t('players.name')
+        th= t('players.games')
+        th= t('players.avg_position')
+    tbody
+      tr ng-repeat="player in players"
+        td ng-bind="player.name"
+        td ng-bind="player.games_count"
+        td ng-bind="player.avg_position"

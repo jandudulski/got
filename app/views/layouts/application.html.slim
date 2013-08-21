@@ -13,6 +13,7 @@ html ng-app="got" lang="pl"
         nav.Nav
           = link_to t('nav.home'), root_path, class: 'Nav__item'
           = link_to t('nav.add_game'), new_game_path, class: 'Nav__item'
+          = link_to t('nav.players'), players_path, class: 'Nav__item'
 
       - unless flash.empty?
         section.Flash
