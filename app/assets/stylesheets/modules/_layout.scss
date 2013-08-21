@@ -1,7 +1,14 @@
 @import 'neat';
 
-$visual-grid: true;
+body {
+  background-image: image-url("bg.jpg");
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+}
 
 .Grid {
   @include outer-container;
+
+  background: rgba(255, 255, 255, .9);
+  height: 100%;
 }
