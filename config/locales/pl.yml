@@ -3,6 +3,17 @@ pl:
     home: 'Wyniki'
     add_game: 'Dodaj'
     players: 'Gracze'
+  common:
+    see: 'Zobacz'
+    edit: 'Edytuj'
+  games:
+    ordinal: 'LP'
+    date: 'Data'
+    version: 'Wersja'
+    players: 'Graczy'
+    winner: 'Król'
+    comment: 'Komentarz'
+    action: 'Akcja'
   players:
     name: 'Gracz'
     games: 'Gier'

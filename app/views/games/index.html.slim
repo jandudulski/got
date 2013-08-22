@@ -1,21 +1,14 @@
-section ng-controller="GamesCtrl"
+section
   table.Games
     thead
       tr
-        th
-          | #
-        th
-          | Data
-        th
-          | Wersja
-        th
-          | Graczy
-        th
-          | Zwycięzca
-        th
-          | Koment
-        th
-          | Akcja
+        th= t('games.ordinal')
+        th= t('games.date')
+        th= t('games.version')
+        th= t('games.players')
+        th= t('games.winner')
+        th= t('games.comment')
+        th= t('games.action')
     tbody
       tr ng-repeat="game in games"
         td ng-bind="game.number"
@@ -25,5 +18,5 @@ section ng-controller="GamesCtrl"
         td class="Game-cell__icon--{{ game.winner.house.icon }}" ng-bind="game.winner.player.name"
         td ng-bind="game.comment"
         td
-          a href="{{ game.links.self.href }}" Zobacz
-          a href="{{ game.links.edit.href }}" Edytuj
+          a href="{{ game.links.self.href }}"= t('common.see')
+          a href="{{ game.links.edit.href }}"= t('common.edit')
