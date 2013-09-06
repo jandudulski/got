@@ -11,11 +11,11 @@ if meta && meta.hasAttribute('content')
 # Routing
 app.config ['$routeProvider', ($routeProvider) ->
   $routeProvider.
-    when('/players', {controller: 'PlayersCtrl', templateUrl: '<%= asset_path('templates/players/index.html') %>'}).
-    when('/games/:game_id/results/new', {controller: 'NewResultCtrl', templateUrl: '<%= asset_path('/assets/results/new.html') %>'}).
-    when('/games/:id/edit', {controller: 'EditGameCtrl', templateUrl: '<%= asset_path('/assets/games/edit.html') %>'}).
-    when('/games/new', {controller: 'NewGameCtrl', templateUrl: '<%= asset_path('/assets/games/new.html') %>'}).
-    when('/games/:id', {controller: 'GameCtrl', templateUrl: '<%= asset_path('/assets/games/show.html') %>'}).
-    when('/', {controller: 'GamesCtrl', templateUrl: '<%= asset_path('/assets/games/index.html') %>'}).
+    when('/players', {controller: 'PlayersCtrl', templateUrl: '<%= asset_path('assets/players/index.html') %>'}).
+    when('/games/:game_id/results/new', {controller: 'NewResultCtrl', templateUrl: '<%= asset_path('assets/results/new.html') %>'}).
+    when('/games/:id/edit', {controller: 'EditGameCtrl', templateUrl: '<%= asset_path('assets/games/edit.html') %>'}).
+    when('/games/new', {controller: 'NewGameCtrl', templateUrl: '<%= asset_path('assets/games/new.html') %>'}).
+    when('/games/:id', {controller: 'GameCtrl', templateUrl: '<%= asset_path('assets/games/show.html') %>'}).
+    when('/', {controller: 'GamesCtrl', templateUrl: '<%= asset_path('assets/games/index.html') %>'}).
     otherwise({redirectTo: '/'})
 ]
