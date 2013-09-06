@@ -16,11 +16,15 @@ class GamesController < ApplicationController
   end
 
   def create
-    respond_with game
+    game.save
+
+    respond_with game, represent_with: GameRepresenter
   end
 
   def update
-    respond_with game
+    game.save
+
+    respond_with game, represent_with: GameRepresenter
   end
 
   private

@@ -1,4 +1,6 @@
 pl:
+  errors:
+    required: 'Pole nie może być puste'
   nav:
     home: 'Wyniki'
     add_game: 'Dodaj'
@@ -6,6 +8,11 @@ pl:
   common:
     see: 'Zobacz'
     edit: 'Edytuj'
+  game:
+    position: '#'
+    player: 'Gracz'
+    comment: 'Komentarz'
+    add_result: 'dodaj'
   games:
     ordinal: 'LP'
     date: 'Data'
@@ -22,3 +29,7 @@ pl:
     name: 'Gracz'
     games: 'Gier'
     avg_position: 'Śr. miejsce'
+  result:
+    header: 'Uzupełnij wynik'
+    new:
+      submit: 'Dodaj'

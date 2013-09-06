@@ -1,0 +1,29 @@
+h1= t('result.header')
+
+form name="newResultForm" ng-submit="save(result)" novalidate="true"
+  div
+    label= t('result.house')
+    select name="house_id" ng-model="result.house_id" ng-options="h.id as h.name for h in houses | orderBy:'name'" ng-required="true" server-error="true"
+    .error ng-show="newResultForm.house_id.$dirty && newResultForm.house_id.$invalid"
+      span ng-show="newResultForm.house_id.$error.required"= t('errors.required')
+      span ng-show="newResultForm.house_id.$error.server"
+        | {{ errors.house_id }}
+  div
+    label= t('result.player')
+    select name="player_id" ng-model="result.player_id" ng-options="p.id as p.name for p in players | orderBy:'name'" ng-required="true" server-error="true"
+    .error ng-show="newResultForm.player_id.$dirty && newResultForm.player_id.$invalid"
+      span ng-show="newResultForm.player_id.$error.required"= t('errors.required')
+      span ng-show="newResultForm.player_id.$error.server"
+        | {{ errors.player_id }}
+  div
+    label= t('result.position')
+    select name="position" ng-model="result.position" ng-options="p for p in positions" ng-required="true" server-error="true"
+    .error ng-show="newResultForm.position.$dirty && newResultForm.position.$invalid"
+      span ng-show="newResultForm.position.$error.required"= t('errors.required')
+      span ng-show="newResultForm.position.$error.server"
+        | {{ errors.position }}
+  div
+    label= t('result.comment')
+    textarea ng-model="result.comment"
+  div
+    input type="submit" value="#{t('result.new.submit')}" ng-disabled="newResultForm.$invalid"

@@ -1,0 +1,20 @@
+h3
+  | {{ game.date }} - {{ game.version }}
+
+p ng-show="game.comment"
+  | {{ game.comment }}
+
+table.Games
+  thead
+    tr
+      th= t('game.position')
+      th= t('game.player')
+      th= t('game.comment')
+  tbody
+    tr ng-repeat="result in game.results | orderBy:'position'"
+      td ng-bind="result.position"
+      td class="Game-cell__icon--{{ result.house.icon }}" ng-bind="result.player.name"
+      td ng-bind="result.comment"
+    tr
+      td colspan="3"
+        a ng-href="/#/games/{{ game.id }}/results/new"= t('game.add_result')

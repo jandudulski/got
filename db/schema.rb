@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130819225732) do
+ActiveRecord::Schema.define(version: 20130905103647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20130819225732) do
   end
 
   create_table "games", force: true do |t|
-    t.integer  "number"
     t.integer  "game_version_id"
     t.text     "comment"
     t.datetime "created_at"
@@ -34,7 +33,6 @@ ActiveRecord::Schema.define(version: 20130819225732) do
   end
 
   add_index "games", ["game_version_id"], name: "index_games_on_game_version_id", using: :btree
-  add_index "games", ["number"], name: "index_games_on_number", unique: true, using: :btree
 
   create_table "houses", force: true do |t|
     t.string   "name"

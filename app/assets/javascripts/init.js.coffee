@@ -11,8 +11,11 @@ if meta && meta.hasAttribute('content')
 # Routing
 app.config ['$routeProvider', ($routeProvider) ->
   $routeProvider.
-    when('/players', {controller: 'PlayersCtrl', templateUrl: '/players.html'}).
-    when('/games/new', {controller: 'NewGameCtrl', templateUrl: '/games/new.html'}).
-    when('/', {controller: 'GamesCtrl', templateUrl: '/games.html'}).
+    when('/players', {controller: 'PlayersCtrl', templateUrl: '/assets/players/index.html'}).
+    when('/games/:game_id/results/new', {controller: 'NewResultCtrl', templateUrl: '/assets/results/new.html'}).
+    when('/games/:id/edit', {controller: 'EditGameCtrl', templateUrl: '/assets/games/edit.html'}).
+    when('/games/new', {controller: 'NewGameCtrl', templateUrl: '/assets/games/new.html'}).
+    when('/games/:id', {controller: 'GameCtrl', templateUrl: '/assets/games/show.html'}).
+    when('/', {controller: 'GamesCtrl', templateUrl: '/assets/games/index.html'}).
     otherwise({redirectTo: '/'})
 ]

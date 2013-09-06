@@ -1,4 +1,35 @@
 angular.module('got').controller 'GamesCtrl', ['$scope', 'Games', ($scope, Games) ->
-  Games.index().then (result) ->
-    $scope.games = result.data
+  Games.list (games) ->
+    $scope.games = games
+]
+
+angular.module('got').controller 'GameCtrl', ['$scope', '$routeParams', 'Games', ($scope, $routeParams, Games) ->
+  Games.find $routeParams.id, (game) ->
+    $scope.game = game
+]
+
+angular.module('got').controller 'NewGameCtrl', ['$scope', '$location', 'Games', 'GameVersions', ($scope, $location, Games, GameVersions) ->
+  GameVersions.list (versions) ->
+    $scope.versions = versions
+
+  Games.new (game) ->
+    $scope.errors = {}
+    $scope.game = game
+
+  $scope.save = (data) ->
+    success = (result) ->
+      $location.path("games/#{result.data.id}")
+    error = (result) ->
+      $scope.errors = {}
+
+      angular.forEach result.data.errors, (errors, field) ->
+        $scope.newGameForm[field].$setValidity('server', false)
+        $scope.errors[field] = errors.join(', ')
+
+    Games.create(data).then(success, error)
+]
+
+angular.module('got').controller 'EditGameCtrl', ['$scope', ($scope) ->
+  $scope.edit = (game) ->
+    game.edit = true
 ]

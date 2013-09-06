@@ -2,18 +2,18 @@ require 'roar/representer/json'
 
 module GameRepresenter
   include Roar::Representer::JSON
-  include Roar::Representer::JSON::HAL::Links
 
   property :id
-  property :number
   property :date
-  property :version
-  property :players_count
-  property :winner, extend: ResultRepresenter, class: Result
+  property :game_version, extend: GameVersionRepresenter
+  collection :results, extend: ResultRepresenter
+  property :winner, extend: ResultRepresenter
   property :comment
+  property :edit
+  property :created_at
 
-  def version
-    self.game_version.name_with_capacity
+  def edit
+    false
   end
 
   def players_count
@@ -22,13 +22,5 @@ module GameRepresenter
 
   def winner
     self.results.find { |r| r.position == 1 }
-  end
-
-  link :self do
-    game_path(self)
-  end
-
-  link :edit do
-    edit_game_path(self)
   end
 end

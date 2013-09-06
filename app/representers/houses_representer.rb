@@ -1,7 +1,7 @@
 require 'representable/json/collection'
 
-module GamesRepresenter
+module HousesRepresenter
   include Representable::JSON::Collection
 
-  items extend: GameRepresenter
+  items extend: HouseRepresenter
 end

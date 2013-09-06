@@ -14,13 +14,13 @@ class ResultsController < ApplicationController
   def create
     result.save
 
-    respond_with result
+    respond_with result, location: [game, result], represent_with: ResultRepresenter
   end
 
   def update
     result.save
 
-    respond_with result
+    respond_with [game, result]
   end
 
   private

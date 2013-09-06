@@ -1,0 +1,21 @@
+a href="/#/games/new"= t('games.add')
+
+section
+  table.Games
+    thead
+      tr
+        th= t('games.ordinal')
+        th= t('games.date')
+        th= t('games.version')
+        th= t('games.players')
+        th= t('games.winner')
+        th= t('games.comment')
+    tbody ng-repeat="game in games | orderBy:['date','created_at']:true"
+      tr
+        td
+          a ng-href="/#/games/{{ game.id }}" ng-bind="games.length - $index"
+        td ng-bind="game.date"
+        td ng-bind="game.game_version.name_with_capacity"
+        td ng-bind="game.players_count"
+        td class="Game-cell__icon--{{ game.winner.house.icon }}" ng-bind="game.winner.player.name"
+        td ng-bind="game.comment"

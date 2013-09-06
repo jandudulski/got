@@ -16,6 +16,7 @@ gem 'rails-assets-angular-route', '1.2.0.rc.1'
 gem 'rails-assets-underscore'
 gem 'neat'
 gem 'sass-rails', '~> 4.0.0'
+gem 'slim_assets'
 gem 'uglifier', '>= 1.3.0'
 
 # Utils
@@ -36,6 +37,7 @@ end
 group :development do
   gem 'commands'
   gem 'mina', require: false
+  gem 'pry-rails'
 end
 
 group :test do
