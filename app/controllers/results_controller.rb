@@ -1,5 +1,5 @@
 class ResultsController < ApplicationController
-  respond_to :html
+  respond_to :json
 
   expose(:game)
   expose(:results) { game.results }
@@ -8,19 +8,19 @@ class ResultsController < ApplicationController
   def new
     result.position = game.results.count + 1
 
-    respond_with result
+    render json: result.extend(ResultRepresenter)
   end
 
   def create
     result.save
 
-    respond_with result, location: game
+    respond_with result
   end
 
   def update
     result.save
 
-    respond_with result, location: game
+    respond_with result
   end
 
   private

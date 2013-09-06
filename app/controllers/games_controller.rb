@@ -1,40 +1,25 @@
 class GamesController < ApplicationController
-  respond_to :html, :json
+  respond_to :json
 
-  expose(:games) { Game.includes(results: [:house, :player]).includes(:game_version).order(date: :desc) }
+  expose(:games) { Game.includes(results: [:house, :player]).includes(:game_version) }
   expose(:game, attributes: :game_params)
-  expose(:last_game_number) { Game.maximum(:number) || 0 }
+  expose(:default_game_version) { GameVersion.first }
 
   def index
-    respond_to do |format|
-      format.html
-      format.json { render json: games.extend(GamesRepresenter) }
-    end
+    render json: games.extend(GamesRepresenter)
   end
 
   def new
-    game.number = last_game_number + 1
+    game.game_version = default_game_version
 
-    respond_with game
+    render json: game.extend(NewGameRepresenter)
   end
 
   def create
-    if game.save
-      flash[:success] = "Dodano"
-    else
-      flash[:alert] = "Dupa"
-    end
-
     respond_with game
   end
 
   def update
-    if game.save
-      flash[:success] = "Zapisane"
-    else
-      flash[:alert] = "Dupa"
-    end
-
     respond_with game
   end
 
