@@ -29,7 +29,25 @@ angular.module('got').controller 'NewGameCtrl', ['$scope', '$location', 'Games',
     Games.create(data).then(success, error)
 ]
 
-angular.module('got').controller 'EditGameCtrl', ['$scope', ($scope) ->
-  $scope.edit = (game) ->
-    game.edit = true
+angular.module('got').controller 'EditGameCtrl', [
+  '$scope', '$location', '$routeParams', 'Games', 'GameVersions',
+  ($scope, $location, $routeParams, Games, GameVersions) ->
+    GameVersions.list (versions) ->
+      $scope.versions = versions
+
+    Games.find $routeParams.id, (game) ->
+      $scope.errors = {}
+      $scope.game = game
+
+    $scope.save = (data) ->
+      success = (result) ->
+        $location.path("games/#{$routeParams.id}")
+      error = (result) ->
+        $scope.errors = {}
+
+        angular.forEach result.data.errors, (errors, field) ->
+          $scope.editGameForm[field].$setValidity('server', false)
+          $scope.errors[field] = errors.join(', ')
+
+      Games.update($routeParams.id, data).then(success, error)
 ]

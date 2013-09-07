@@ -13,6 +13,9 @@ pl:
     player: 'Gracz'
     comment: 'Komentarz'
     add_result: 'dodaj'
+    edit:
+      header: 'Edytuj'
+      submit: 'Zapisz'
   games:
     ordinal: 'LP'
     date: 'Data'

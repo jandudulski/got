@@ -15,6 +15,10 @@ class GamesController < ApplicationController
     render json: game.extend(NewGameRepresenter)
   end
 
+  def edit
+    render json: game.extend(GameRepresenter)
+  end
+
   def create
     game.save
 

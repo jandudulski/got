@@ -1,0 +1,18 @@
+h1= t('game.edit.header')
+
+form name="editGameForm" ng-submit="save(game)" novalidate="true"
+  div
+    label= t('game.date')
+    input type="text" name="date" ng-model="game.date" ng-required="true" server-error="true"
+    .error ng-show="updateGameForm.date.$dirty && updateGameForm.date.$invalid"
+      span ng-show="updateGameForm.date.$error.required"= t('errors.required')
+      span ng-show="updateGameForm.date.$error.server"
+        | {{ errors.date }}
+  div
+    label= t('games.version')
+    select name="game_version_id" ng-model="game.game_version_id" ng-options="v.id as v.name_with_capacity for v in versions" ng-required="true"
+  div
+    label= t('games.comment')
+    textarea ng-model="game.comment"
+  div
+    input type="submit" value="#{t('game.edit.submit')}"

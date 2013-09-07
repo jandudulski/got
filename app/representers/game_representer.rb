@@ -6,6 +6,7 @@ module GameRepresenter
   property :id
   property :date
   property :game_version, extend: GameVersionRepresenter
+  property :game_version_id
   collection :results, extend: ResultRepresenter
   property :winner, extend: ResultRepresenter
   property :comment
