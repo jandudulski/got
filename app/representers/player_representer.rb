@@ -14,6 +14,6 @@ module PlayerRepresenter
   end
 
   def avg_position
-    self.results.average(:position).round(2)
+    (self.results.average(:position) || 0).round(2)
   end
 end
