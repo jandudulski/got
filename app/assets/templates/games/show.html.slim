@@ -1,6 +1,6 @@
 h3
   | {{ game.date }} - {{ game.game_version.name_with_capacity }}
-  a href="/#/games/{{ game.id }}/edit"= t('game.edit')
+  a ng-href="/#/games/{{ game.id }}/edit"= t('common.edit')
 
 p ng-show="game.comment"
   | {{ game.comment }}
