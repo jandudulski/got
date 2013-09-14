@@ -7,4 +7,5 @@ module ResultRepresenter
   property :player, extend: PlayerRepresenter
   property :house, extend: HouseRepresenter
   property :position
+  property :comment
 end
