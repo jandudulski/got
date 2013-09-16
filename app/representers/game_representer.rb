@@ -8,6 +8,7 @@ module GameRepresenter
   property :game_version, extend: GameVersionRepresenter
   property :game_version_id
   collection :results, extend: ResultRepresenter
+  property :players_count
   property :winner, extend: ResultRepresenter
   property :comment
   property :edit
